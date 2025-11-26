@@ -8,21 +8,21 @@ import PostHogProvider from "~/components/PostHogProvider";
 import PostHogPageView from "~/components/PostHogPageView";
 
 export const metadata: Metadata = {
-  title: "AugmentWorks Governance",
+  title: "AugmentWorks · Ship AI Agents, Sleep at Night",
   description:
-    "AI Governance & Compliance Assurance. Hybrid SaaS + advisory that closes the $500k income plan with ten enterprise deals.",
+    "AugmentWorks is the safety infrastructure layer for GenAI. Runtime defense, monitoring, and eval suites that let enterprises deploy AI agents with confidence.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
   openGraph: {
-    title: "AugmentWorks Governance",
+    title: "AugmentWorks · Ship AI Agents, Sleep at Night",
     description:
-      "Risk assurance, AI safety audits, and governance retainers for leaders who only need ten serious clients.",
+      "The product brief for AugmentWorks—firewall, QA harness, and audit trail for enterprise AI deployments.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AugmentWorks Governance",
+    title: "AugmentWorks · Ship AI Agents, Sleep at Night",
     description:
-      "Risk assurance, AI safety audits, and governance retainers for leaders who only need ten serious clients.",
+      "Defense, monitoring, and evaluation for high-stakes GenAI agents. Deploy with confidence.",
   },
 };
 
@@ -51,7 +51,7 @@ export default function RootLayout({
                 "https://x.com/augmentworks",
               ],
               description:
-                "Hybrid AI Governance partner delivering safety audits, compliance automation, and risk assurance retainers.",
+                "Safety infrastructure for GenAI. AugmentWorks delivers runtime defense, monitoring, and evaluation suites so enterprises can deploy AI agents with confidence.",
               contactPoint: [
                 {
                   "@type": "ContactPoint",
