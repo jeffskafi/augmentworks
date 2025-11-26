@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Dark theme base styles */
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background-color: #010817;
+  color: #e2e8f0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fluid type scale and spacing for mobile-first readability */
+:root {
+  --step--2: clamp(0.69rem, 0.67rem + 0.09vw, 0.72rem);
+  --step--1: clamp(0.83rem, 0.79rem + 0.20vw, 0.90rem);
+  --step-0: clamp(1.00rem, 0.94rem + 0.33vw, 1.13rem);
+  --step-1: clamp(1.20rem, 1.11rem + 0.49vw, 1.41rem);
+  --step-2: clamp(1.44rem, 1.31rem + 0.70vw, 1.76rem);
+  --step-3: clamp(1.73rem, 1.54rem + 0.96vw, 2.20rem);
+  --step-4: clamp(2.07rem, 1.80rem + 1.28vw, 2.75rem);
+  --step-5: clamp(2.49rem, 2.09rem + 1.69vw, 3.43rem);
+}
+
+/* Utility classes for fluid type */
+.text-fluid-sm { font-size: var(--step--1); }
+.text-fluid-base { font-size: var(--step-0); }
+.text-fluid-lg { font-size: var(--step-1); }
+.text-fluid-xl { font-size: var(--step-2); }
+.text-fluid-2xl { font-size: var(--step-3); }
+.text-fluid-3xl { font-size: var(--step-4); }
+.text-fluid-4xl { font-size: var(--step-5); }
+
+/* Improve default link contrast on dark */
+a {
+  color: #93c5fd;
+}
+a:hover {
+  color: #bfdbfe;
+}
+
+/* Make sure Next root takes full height */
+#__next,
+html,
+body {
+  height: 100%;
+}
+
+/* Blob field background (static, random-spawn blobs) */
+.blob-field {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  background: radial-gradient(1400px 1400px at 10% 30%, #0f172a 0%, #020617 45%, #01030b 100%);
+}
+.blob-field .blob {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: blob-life var(--life) ease-in-out forwards;
+}
+
+@keyframes blob-life {
+  0% { opacity: 0; }
+  8% { opacity: var(--op); }
+  84% { opacity: var(--op); }
+  100% { opacity: 0; }
+}
+
+/* Mobile and reduced-motion optimizations for blob field */
+@media (max-width: 640px) {
+  .blob-field .blob {
+    filter: blur(36px) saturate(120%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob-field .blob {
+    animation: none !important;
+    opacity: 0.2 !important;
+  }
+}
+
+/* Glass panel utility */
+.glass {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255,255,255,0.04);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(16px) saturate(160%);
+}
+
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background:
+    radial-gradient(120% 100% at 20% -10%, rgba(255,255,255,0.45), rgba(255,255,255,0) 60%),
+    linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0) 40%);
+  pointer-events: none;
+}
+
+/* Button links: force black text across states */
+.btn { color: #ffffff; }
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn:visited { color: #ffffff; }
+
+/* Liquid glass buttons */
+.glass-btn {
+  display: block;
+  background: linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0.10));
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 0.5rem;
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  backdrop-filter: blur(12px) saturate(160%);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.06);
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+}
+.glass-btn:hover {
+  background: linear-gradient(135deg, rgba(255,255,255,0.28), rgba(255,255,255,0.14));
+  box-shadow: 0 10px 28px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(255,255,255,0.08);
+  transform: translateY(-1px);
+}
+.glass-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+}
