@@ -105,12 +105,10 @@ function processMetricsForChart(metrics: { report_month: string; hallucinations_
       year: "2-digit",
     });
 
-    if (!monthlyData[month]) {
-      monthlyData[month] = { hallucinations: 0, jailbreaks: 0 };
-    }
+    monthlyData[month] ??= { hallucinations: 0, jailbreaks: 0 };
 
-    monthlyData[month]!.hallucinations += m.hallucinations_count;
-    monthlyData[month]!.jailbreaks += m.jailbreak_attempts;
+    monthlyData[month].hallucinations += m.hallucinations_count;
+    monthlyData[month].jailbreaks += m.jailbreak_attempts;
   });
 
   // Convert to array format for chart

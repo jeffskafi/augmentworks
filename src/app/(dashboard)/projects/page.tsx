@@ -9,7 +9,7 @@ import { Badge } from "~/components/ui/badge";
 
 import { getCurrentUser, getActiveProject } from "~/actions/get-projects";
 import { getProjectTasks } from "~/actions/get-tasks";
-import type { Task, TaskStatus } from "~/types/database";
+import type { Task } from "~/types/database";
 
 function groupTasksByStatus(tasks: Task[]) {
   return {

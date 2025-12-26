@@ -27,7 +27,7 @@ export function OnboardingChecklist({
   return (
     <div className="space-y-4">
       {ONBOARDING_STEPS.map((step, index) => {
-        const Icon = iconMap[step.icon as keyof typeof iconMap];
+        const Icon = iconMap[step.icon];
         const isCompleted = currentStep > index;
         const isCurrent = currentStep === index;
         const isLocked = currentStep < index;

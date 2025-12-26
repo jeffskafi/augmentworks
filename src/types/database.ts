@@ -167,12 +167,8 @@ export interface Database {
         Update: Partial<Omit<Task, "id" | "created_at">>;
       };
     };
-    Views: {
-      [_ in never]: never;
-    };
-    Functions: {
-      [_ in never]: never;
-    };
+    Views: Record<string, never>;
+    Functions: Record<string, never>;
     Enums: {
       user_role: UserRole;
       project_status: ProjectStatus;

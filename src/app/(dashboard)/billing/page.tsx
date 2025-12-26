@@ -3,7 +3,6 @@ import {
   CreditCard,
   DollarSign,
   Clock,
-  CheckCircle2,
   TrendingUp,
 } from "lucide-react";
 
@@ -15,7 +14,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { getCurrentUser, getActiveProject } from "~/actions/get-projects";
 import { getProjectInvoices, getInvoiceSummary } from "~/actions/get-invoices";
 import { formatCurrency } from "~/lib/utils";
-import type { InvoiceStatus } from "~/types/database";
 
 export default async function BillingPage() {
   const user = await getCurrentUser();

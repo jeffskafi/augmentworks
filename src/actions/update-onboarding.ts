@@ -1,5 +1,7 @@
 "use server";
 
+/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access */
+
 import { revalidatePath } from "next/cache";
 import { createClient } from "~/utils/supabase/server";
 import { updateOnboardingSchema } from "~/lib/validations";

@@ -1,5 +1,8 @@
 "use server";
 
+/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return */
+// Supabase client types require 'any' workarounds due to type inference limitations
+
 import { createClient as createSupabaseClient } from "~/utils/supabase/server";
 import { revalidatePath } from "next/cache";
 import type {

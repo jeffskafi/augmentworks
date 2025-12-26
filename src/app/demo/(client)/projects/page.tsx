@@ -73,7 +73,7 @@ function TaskCard({
                 : task.status === "in_progress"
                   ? "done"
                   : "todo";
-            handleStatusChange(nextStatus);
+            void handleStatusChange(nextStatus);
           }}
           disabled={isPending}
           className={cn(
