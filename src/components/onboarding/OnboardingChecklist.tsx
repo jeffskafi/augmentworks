@@ -5,7 +5,8 @@ import { FileSignature, Key, Calendar, Check, Loader2 } from "lucide-react";
 import { cn } from "~/lib/utils";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent } from "~/components/ui/card";
-import { updateOnboardingStep, ONBOARDING_STEPS } from "~/actions/update-onboarding";
+import { updateOnboardingStep } from "~/actions/update-onboarding";
+import { ONBOARDING_STEPS } from "~/lib/onboarding-config";
 
 const iconMap = {
   FileSignature,

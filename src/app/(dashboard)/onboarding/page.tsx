@@ -9,7 +9,7 @@ import { Button } from "~/components/ui/button";
 import { Progress } from "~/components/ui/progress";
 
 import { getCurrentUser, getActiveProject } from "~/actions/get-projects";
-import { ONBOARDING_STEPS } from "~/actions/update-onboarding";
+import { ONBOARDING_STEPS } from "~/lib/onboarding-config";
 
 export default async function OnboardingPage() {
   const user = await getCurrentUser();
